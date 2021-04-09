@@ -94,7 +94,7 @@ int	get_next_line(int fd, char **line)
 	int			i;
 
 	if (fd < 0 || BUFFER_SIZE < 1 || line == NULL
-		|| read(fd, backup, 0) < 0 || fd >= 256)
+		|| read(fd, backup, 0) < 0 || fd >= 256 || fd == 1 || fd == 2)
 		return (-1);
 	transit = backup;
 	if (got_new_line(backup))
